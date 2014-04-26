@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:stretchColumns="1">
+        <TableRow>
+            <Space
+                android:layout_column="0"
+                android:layout_height="10dip" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_column="0"
+                android:text="Логин: "
+                android:gravity="right"
+                android:padding="3dip" />
+            <EditText
+                android:id="@+id/login"
+                android:padding="3dip"
+                android:layout_span="2"
+                android:layout_marginRight="10dip"
+                android:layout_height="wrap_content" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_column="0"
+                android:text="Пароль: "
+                android:gravity="right"
+                android:padding="3dip" />
+            <EditText
+                android:id="@+id/password"
+                android:padding="3dip"
+                android:layout_span="2"
+                android:layout_marginRight="10dip"
+                android:layout_height="wrap_content" />
+        </TableRow>
+        <TableRow>
+          <TextView
+              android:layout_column="0"
+              android:text="Подтвердите пароль: "
+              android:gravity="right"
+              android:padding="3dip" />
+          <EditText
+              android:id="@+id/rep_password"
+              android:padding="3dip"
+              android:layout_span="2"
+              android:layout_marginRight="10dip"
+              android:layout_height="wrap_content" />
+        </TableRow>
+        <TableRow>
+            <Space
+                android:layout_column="0"
+                android:layout_height="20dip" />
+        </TableRow>
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+        <TableRow>
+            <Space
+                android:layout_column="0"
+                android:layout_height="10dip" />
+        </TableRow>
+        <TableRow>
+            <Button
+                android:layout_column="2"
+                android:text="ОК"
+                android:id="@+id/reg_button"
+                android:layout_width="80dip"
+                android:padding="7dip" />
+        </TableRow>
+    </TableLayout>
+</ScrollView>
