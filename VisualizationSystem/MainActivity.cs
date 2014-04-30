@@ -6,10 +6,12 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Configuration;
+using VisualizationSystem.WebReference;
 
 namespace VisualizationSystem
 {
-    [Activity(Label = "MainActivity", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "Стратегия", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
         int count = 1;
@@ -18,6 +20,22 @@ namespace VisualizationSystem
         {
             base.OnCreate(bundle);
 
+            var programConfig = ProgramConfig.CreateInstance();
+            programConfig.Load();
+            if (programConfig.UserSection != null)
+            {
+                UserService userService = new UserService();
+                AuthorizationState retState;
+                bool rez;
+                string sessionCode;
+                userService.Authorization(programConfig.UserSection.Login, programConfig.UserSection.Password, out retState, out rez, out sessionCode);
+                if (retState == AuthorizationState.Success)
+                {
+                    programConfig.UserSection.SessionCode = sessionCode;
+                    programConfig.Save();
+                    StartActivity(typeof (AutorizedActivity));
+                }
+            }
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 

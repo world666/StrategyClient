@@ -26,6 +26,8 @@ namespace VisualizationSystem
 		
 		public static void UpdateIdValues()
 		{
+			global::Configuration.Resource.String.ApplicationName = global::VisualizationSystem.Resource.String.ApplicationName;
+			global::Configuration.Resource.String.Hello = global::VisualizationSystem.Resource.String.Hello;
 		}
 		
 		public partial class Attribute
@@ -64,7 +66,10 @@ namespace VisualizationSystem
 			public const int autorize_button = 2131034114;
 			
 			// aapt resource value: 0x7f050003
-			public const int log_in_button = 2131034115;
+			public const int autorizedText = 2131034115;
+			
+			// aapt resource value: 0x7f050005
+			public const int log_in_button = 2131034117;
 			
 			// aapt resource value: 0x7f050000
 			public const int login = 2131034112;
@@ -72,14 +77,17 @@ namespace VisualizationSystem
 			// aapt resource value: 0x7f050001
 			public const int password = 2131034113;
 			
-			// aapt resource value: 0x7f050006
-			public const int reg_button = 2131034118;
+			// aapt resource value: 0x7f050008
+			public const int reg_button = 2131034120;
 			
-			// aapt resource value: 0x7f050005
-			public const int rep_password = 2131034117;
+			// aapt resource value: 0x7f050007
+			public const int rep_password = 2131034119;
+			
+			// aapt resource value: 0x7f050006
+			public const int sign_up_button = 2131034118;
 			
 			// aapt resource value: 0x7f050004
-			public const int sign_up_button = 2131034116;
+			public const int unautorize_button = 2131034116;
 			
 			static Id()
 			{
@@ -98,10 +106,13 @@ namespace VisualizationSystem
 			public const int Autorization = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int Main = 2130903041;
+			public const int Autorized = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int Registration = 2130903042;
+			public const int Main = 2130903042;
+			
+			// aapt resource value: 0x7f030003
+			public const int Registration = 2130903043;
 			
 			static Layout()
 			{
