@@ -7,28 +7,34 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Configuration;
-using VisualizationSystem.WebReference;
+using VisualizationSystem.UserServiceReference;
+using VisualizationSystem.VersionServiceReference;
+
 
 namespace VisualizationSystem
 {
     [Activity(Label = "Стратегия", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
-        int count = 1;
-
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
             var programConfig = ProgramConfig.CreateInstance();
             programConfig.Load();
+
+            var versionService = new VersionService();
+            VersionState versionState;
+            bool rez;
+            versionService.VerifyUserAppVersion(programConfig.VersionSection.CurrentVersion, out versionState,out rez); //check current version
+            if (versionState == VersionState.OutDated)
+                StartActivity(typeof(OutDatedVersionActivity));
             if (programConfig.UserSection != null)
             {
-                UserService userService = new UserService();
+                var userService = new UserService();
                 AuthorizationState retState;
-                bool rez;
                 string sessionCode;
-                userService.Authorization(programConfig.UserSection.Login, programConfig.UserSection.Password, out retState, out rez, out sessionCode);
+                userService.Authorization(programConfig.UserSection.Login, programConfig.UserSection.Password, out retState, out rez, out sessionCode); //try autorize user
                 if (retState == AuthorizationState.Success)
                 {
                     programConfig.UserSection.SessionCode = sessionCode;
@@ -41,8 +47,8 @@ namespace VisualizationSystem
 
             // Get our button from the layout resource,
             // and attach an event to it
-            Button logInButton = FindViewById<Button>(Resource.Id.log_in_button);
-            Button signUpButton = FindViewById<Button>(Resource.Id.sign_up_button);
+            var logInButton = FindViewById<Button>(Resource.Id.log_in_button);
+            var signUpButton = FindViewById<Button>(Resource.Id.sign_up_button);
 
             logInButton.Click += delegate { StartActivity(typeof(AutorizationActivity));};
             signUpButton.Click += delegate { StartActivity(typeof(RegistrationActivity)); };

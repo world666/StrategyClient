@@ -13,7 +13,7 @@
 // 
 #pragma warning disable 1591
 
-namespace VisualizationSystem.WebReference {
+namespace VisualizationSystem.UserServiceReference {
     using System;
     using System.Web.Services;
     using System.Diagnostics;
@@ -26,7 +26,7 @@ namespace VisualizationSystem.WebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Web.Services.WebServiceBindingAttribute(Name="ws", Namespace="http://tempuri.org/")]
+    [System.Web.Services.WebServiceBindingAttribute(Name="BasicHttpBinding_IUserService", Namespace="http://tempuri.org/")]
     public partial class UserService : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
         private System.Threading.SendOrPostCallback RegistrationOperationCompleted;
@@ -39,7 +39,7 @@ namespace VisualizationSystem.WebReference {
         
         /// <remarks/>
         public UserService() {
-            this.Url = "http://192.168.1.103/WCF/users.svc";
+            this.Url = "http://109.254.14.106/WCF/users.svc";
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;

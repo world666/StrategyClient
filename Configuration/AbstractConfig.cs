@@ -25,7 +25,7 @@ namespace Configuration
             String fullfilename = CONFIG_FILE_PATH + Path.DirectorySeparatorChar + XML_FILENAME;
             if (!File.Exists(fullfilename))
             {
-                SetObject(GetObject());
+                SetObject(GetDefault());
                 return;
             }
             try

@@ -22,24 +22,29 @@ namespace Configuration
 
         public UserSection UserSection { get; set; }
 
+        public VersionSection VersionSection { get; set; }
+
         protected override void SetObject(ProgramConfig obj)
         {
             this.UserSection = obj.UserSection;
+            this.VersionSection = obj.VersionSection;
         }
 
         protected override ProgramConfig GetObject()
         {
-            /*this.UserSection = new UserSection()
-                {
-                    Login = "and",
-                    Password = "and"
-                };*/
             return this;
         }
 
         protected override ProgramConfig GetDefault()
         {
-            return new ProgramConfig();
+            var programConfig =  new ProgramConfig
+                {
+                    VersionSection = new VersionSection()
+                        {
+                            CurrentVersion = "BusinessStartegy v1.0"
+                        }
+                };
+            return programConfig;
         }
         private static ProgramConfig _selRefference;
     }

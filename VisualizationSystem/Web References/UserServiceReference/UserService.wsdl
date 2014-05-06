@@ -140,7 +140,7 @@
       <wsdl:output wsaw:Action="http://tempuri.org/IUserService/GetCommandStringResponse" message="tns:IUserService_GetCommandString_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="ws" type="tns:IUserService">
+  <wsdl:binding name="BasicHttpBinding_IUserService" type="tns:IUserService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="Registration">
       <soap:operation soapAction="http://tempuri.org/IUserService/Registration" style="document" />
@@ -171,7 +171,7 @@
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="UserService">
-    <wsdl:port name="ws" binding="tns:ws">
+    <wsdl:port name="BasicHttpBinding_IUserService" binding="tns:BasicHttpBinding_IUserService">
       <soap:address location="http://192.168.1.103/WCF/users.svc" />
     </wsdl:port>
   </wsdl:service>

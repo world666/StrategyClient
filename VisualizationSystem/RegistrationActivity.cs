@@ -11,7 +11,7 @@ using Android.Views;
 using Android.Widget;
 using Configuration;
 using Configuration.Sections;
-using VisualizationSystem.WebReference;
+using VisualizationSystem.UserServiceReference;
 
 namespace VisualizationSystem
 {
