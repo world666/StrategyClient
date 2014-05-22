@@ -17,4 +17,14 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/unautorize_button" />
+  <Button
+        android:text="Настройки"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/settings_button" />
+  <Button
+        android:text="Выбрать бизнес"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/business_button" />
 </LinearLayout>

@@ -1,17 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Android.App;
-using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
 using Android.Widget;
 using Configuration;
+using VisualizationSystem.Activities.Businesses;
 
-namespace VisualizationSystem
+namespace VisualizationSystem.Activities
 {
     [Activity(Label = "Стратегия")]
     public class AutorizedActivity : Activity
@@ -25,6 +18,8 @@ namespace VisualizationSystem
 
             var text = FindViewById<TextView>(Resource.Id.autorizedText);
             var unAutorizeButton = FindViewById<Button>(Resource.Id.unautorize_button);
+            var businessButton = FindViewById<Button>(Resource.Id.business_button);
+            var settingsButton = FindViewById<Button>(Resource.Id.settings_button);
 
             var programConfig = ProgramConfig.CreateInstance();
             text.Text = programConfig.UserSection.SessionCode;
@@ -35,6 +30,16 @@ namespace VisualizationSystem
                     programConfig.Save();
                     StartActivity(typeof(MainActivity));
                 };
+
+            businessButton.Click += delegate
+            {
+                StartActivity(typeof(StateActivity));
+            };
+
+            settingsButton.Click += delegate
+            {
+                StartActivity(typeof(SettingsActivity));
+            };
         }
     }
 }

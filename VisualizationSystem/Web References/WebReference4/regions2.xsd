@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/DataRepository.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DataRepository.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://192.168.1.103/WCF/regions.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:simpleType name="Language">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="English" />
+      <xs:enumeration value="Russian" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Language" nillable="true" type="tns:Language" />
+  <xs:complexType name="ArrayOfRegion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Region" nillable="true" type="tns:Region" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRegion" nillable="true" type="tns:ArrayOfRegion" />
+  <xs:complexType name="Region">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Businesses" nillable="true" type="tns:ArrayOfBusiness" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="RegionsNames" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="RegionsNamesList" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="tns:State" />
+      <xs:element minOccurs="0" name="StateId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Region" nillable="true" type="tns:Region" />
+  <xs:complexType name="ArrayOfBusiness">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Business" nillable="true" type="tns:Business" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBusiness" nillable="true" type="tns:ArrayOfBusiness" />
+  <xs:complexType name="Business">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BusinessesNames" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="BusinessesNamesList" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Descriptions" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DescriptionsList" nillable="true" type="q3:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Region" nillable="true" type="tns:Region" />
+      <xs:element minOccurs="0" name="RegionId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Business" nillable="true" type="tns:Business" />
+  <xs:complexType name="State">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Regions" nillable="true" type="tns:ArrayOfRegion" />
+      <xs:element minOccurs="0" name="StatesNames" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="StatesNamesList" nillable="true" type="q4:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="State" nillable="true" type="tns:State" />
+</xs:schema>

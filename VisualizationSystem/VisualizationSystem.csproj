@@ -50,19 +50,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AutorizationActivity.cs" />
-    <Compile Include="AutorizedActivity.cs" />
-    <Compile Include="MainActivity.cs" />
-    <Compile Include="OutDatedVersionActivity.cs" />
-    <Compile Include="RegistrationActivity.cs" />
+    <Compile Include="Activities\AutorizationActivity.cs" />
+    <Compile Include="Activities\AutorizedActivity.cs" />
+    <Compile Include="Activities\Businesses\BusinessActivity.cs" />
+    <Compile Include="Activities\Businesses\BusinessDescriptionActivity.cs" />
+    <Compile Include="Activities\Businesses\RegionActivity.cs" />
+    <Compile Include="Activities\Businesses\StateActivity.cs" />
+    <Compile Include="Activities\MainActivity.cs" />
+    <Compile Include="Activities\OutDatedVersionActivity.cs" />
+    <Compile Include="Activities\RegistrationActivity.cs" />
+    <Compile Include="Activities\SettingsActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Web References\UserServiceReference\Reference.cs">
+    <Compile Include="Web References\WebReference1\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
-    <Compile Include="Web References\VersionServiceReference\Reference.cs">
+    <Compile Include="Web References\WebReference3\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WebReference4\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WebReference5\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WebReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
@@ -83,23 +103,59 @@
     <AndroidResource Include="Resources\Layout\OutDatedVersion.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
-    <None Include="Web References\UserServiceReference\AuthorizationState.datasource">
+    <None Include="Web References\WebReference1\AuthorizationState.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\UserServiceReference\Reference.map">
+    <None Include="Web References\WebReference1\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Web References\UserServiceReference\RegistrationState.datasource">
+    <None Include="Web References\WebReference1\RegistrationState.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\UserServiceReference\UserService.wsdl" />
-    <None Include="Web References\VersionServiceReference\Reference.map">
+    <None Include="Web References\WebReference1\UserService.wsdl" />
+    <None Include="Web References\WebReference3\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Web References\VersionServiceReference\VersionService.wsdl" />
-    <None Include="Web References\VersionServiceReference\VersionState.datasource">
+    <None Include="Web References\WebReference3\State.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference3\StateService.wsdl" />
+    <None Include="Web References\WebReference4\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WebReference4\Region.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference4\regions.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebReference4\regions0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebReference4\regions1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebReference4\regions2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebReference4\RegionService.wsdl" />
+    <None Include="Web References\WebReference5\Business.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference5\BusinessService.wsdl" />
+    <None Include="Web References\WebReference5\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WebReference\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WebReference\VersionService.wsdl" />
+    <None Include="Web References\WebReference\VersionState.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
   </ItemGroup>
@@ -114,6 +170,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\AndroidManifest.xml" />
+    <None Include="Web References\WebReference4\regions.disco" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Configuration\Configuration.csproj">
@@ -125,9 +182,48 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
+    <WebReferenceUrl Include="http://192.168.1.103/WCF/businesses.svc%3fsingleWsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WebReference5\</RelPath>
+      <UpdateFromURL>http://192.168.1.103/WCF/businesses.svc%3fsingleWsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>
+      </CachedAppSettingsObjectName>
+      <CachedSettingsPropName>
+      </CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://192.168.1.103/WCF/regions.svc">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WebReference4\</RelPath>
+      <UpdateFromURL>http://192.168.1.103/WCF/regions.svc</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>
+      </CachedAppSettingsObjectName>
+      <CachedSettingsPropName>
+      </CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://192.168.1.103/WCF/states.svc%3fsingleWsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WebReference3\</RelPath>
+      <UpdateFromURL>http://192.168.1.103/WCF/states.svc%3fsingleWsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>
+      </CachedAppSettingsObjectName>
+      <CachedSettingsPropName>
+      </CachedSettingsPropName>
+    </WebReferenceUrl>
     <WebReferenceUrl Include="http://192.168.1.103/WCF/users.svc%3fsingleWsdl">
       <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\UserServiceReference\</RelPath>
+      <RelPath>Web References\WebReference1\</RelPath>
       <UpdateFromURL>http://192.168.1.103/WCF/users.svc%3fsingleWsdl</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
@@ -140,7 +236,7 @@
     </WebReferenceUrl>
     <WebReferenceUrl Include="http://192.168.1.103/WCF/versions.svc%3fsingleWsdl">
       <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\VersionServiceReference\</RelPath>
+      <RelPath>Web References\WebReference\</RelPath>
       <UpdateFromURL>http://192.168.1.103/WCF/versions.svc%3fsingleWsdl</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
@@ -152,6 +248,7 @@
       </CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
      Other similar extension points exist, see Microsoft.Common.targets.

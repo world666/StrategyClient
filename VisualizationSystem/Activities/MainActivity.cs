@@ -1,19 +1,13 @@
-Ôªøusing System;
-
 using Android.App;
-using Android.Content;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
+using Android.Widget;
 using Configuration;
-using VisualizationSystem.UserServiceReference;
-using VisualizationSystem.VersionServiceReference;
+using VisualizationSystem.WebReference;
+using VisualizationSystem.WebReference1;
 
-
-namespace VisualizationSystem
+namespace VisualizationSystem.Activities
 {
-    [Activity(Label = "–°—Ç—Ä–∞—Ç–µ–≥–∏—è", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "—Ú‡ÚÂ„Ëˇ", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
         protected override void OnCreate(Bundle bundle)

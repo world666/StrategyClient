@@ -24,10 +24,13 @@ namespace Configuration
 
         public VersionSection VersionSection { get; set; }
 
+        public GeneralSection GeneralSection { get; set; }
+
         protected override void SetObject(ProgramConfig obj)
         {
             this.UserSection = obj.UserSection;
             this.VersionSection = obj.VersionSection;
+            this.GeneralSection = obj.GeneralSection;
         }
 
         protected override ProgramConfig GetObject()
@@ -42,6 +45,10 @@ namespace Configuration
                     VersionSection = new VersionSection()
                         {
                             CurrentVersion = "BusinessStartegy v1.0"
+                        },
+                    GeneralSection = new GeneralSection()
+                        {
+                            LanguageId = 0
                         }
                 };
             return programConfig;

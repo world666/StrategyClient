@@ -13,7 +13,7 @@
 // 
 #pragma warning disable 1591
 
-namespace VisualizationSystem.UserServiceReference {
+namespace VisualizationSystem.WebReference1 {
     using System;
     using System.Web.Services;
     using System.Diagnostics;
@@ -39,7 +39,7 @@ namespace VisualizationSystem.UserServiceReference {
         
         /// <remarks/>
         public UserService() {
-            this.Url = "http://109.254.14.106/WCF/users.svc";
+            this.Url = "http://192.168.1.103/WCF/users.svc";
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;

@@ -13,7 +13,7 @@
 // 
 #pragma warning disable 1591
 
-namespace VisualizationSystem.VersionServiceReference {
+namespace VisualizationSystem.WebReference {
     using System;
     using System.Web.Services;
     using System.Diagnostics;
@@ -37,7 +37,7 @@ namespace VisualizationSystem.VersionServiceReference {
         
         /// <remarks/>
         public VersionService() {
-            this.Url = "http://109.254.14.106/WCF/versions.svc";
+            this.Url = "http://192.168.1.103/WCF/versions.svc";
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;
